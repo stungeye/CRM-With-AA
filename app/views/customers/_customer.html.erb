@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">
+      <%= link_to customer.full_name, customer %>
+    </h4>
+  </div>
+
+  <% if customer.image.present? %>
+    <%= image_tag customer.image, class: 'card-img-top img-fluid mx-auto d-block' %>
+  <% end %>
+
+  <div class="card-block">
+    <p class="card-text">
+      <strong>Province: </strong>
+      <% if customer.province.present? %>
+        <%= customer.province.name %>
+      <% else %>
+        Unknown
+      <% end %>
+    </p>
+  </div>
+
+  <div class="card-block">
+      <p class="card-text">
+        <%= customer.phone %>
+      </p>
+  </div>
+
+  <div class="card-block">
+      <p class="card-text">
+        <%= customer.email %>
+      </p>
+  </div>
+</div>
