@@ -13,6 +13,15 @@
       <header>
         <h1><%= link_to 'Glutton CRM', root_path %></h1>
       </header>
+
+      <div>
+        You have visited this page <%= pluralize(@visit_count, 'time') %>.
+      </div>
+
+      <div>
+        <%= debug session[:to_call_list] %>
+      </div>
+
       <%= yield %>
     </div>
   </body>

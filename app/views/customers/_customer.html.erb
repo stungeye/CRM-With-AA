@@ -31,4 +31,10 @@
         <%= customer.email %>
       </p>
   </div>
+
+  <div class="card-block">
+      <p class="card-text">
+        <%= button_to 'Remember to Call', remember_to_call_customer_path(customer), method: :post %>
+      </p>
+  </div>
 </div>
