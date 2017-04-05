@@ -25,9 +25,4 @@ class CustomersController < ApplicationController
     Customer.find(session[:to_call_list])
   end
   helper_method :customers_to_call
-
-  def visit_count
-    session[:visit_count]
-  end
-  helper_method :visit_count
 end
