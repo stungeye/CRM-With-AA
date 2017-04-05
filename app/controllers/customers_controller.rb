@@ -14,7 +14,7 @@ class CustomersController < ApplicationController
   def remember_to_call
     id = params[:id].to_i
     session[:to_call_list] << id unless session[:to_call_list].include?(id)
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   private
