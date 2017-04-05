@@ -18,7 +18,6 @@ class CustomersController < ApplicationController
   private
 
   def initialize_session
-    session[:visit_count] ||= 0
     session[:to_call_list] ||= []
   end
 
