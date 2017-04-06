@@ -12,6 +12,14 @@ class CustomersController < ApplicationController
   def remember_to_call
     id = params[:id].to_i
     session[:to_call_list] << id unless session[:to_call_list].include?(id)
+    flash[:notice] = "Customer added to the to call list."
+    redirect_back(fallback_location: root_path)
+  end
+
+  def mark_as_called
+    id = params[:id].to_i
+    session[:to_call_list].delete(id)
+    flash[:notice] = "Marked customer as called."
     redirect_back(fallback_location: root_path)
   end
 

@@ -1,3 +1,14 @@
+
+<% if customers_to_call.any? %>
+  <h2>Customers to Call</h2>
+  <div class="card-deck-wrapper">
+    <div class="card-deck">
+      <%= render customers_to_call %>
+    </div>
+  </div>
+<% end %>
+
+<h2>All Customers</h2>
 <div class="card-deck-wrapper">
   <div class="card-deck">
     <%= render @customers %>

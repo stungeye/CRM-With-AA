@@ -13,10 +13,14 @@
       <header>
         <h1><%= link_to 'Glutton CRM', root_path %></h1>
       </header>
-
-      <div>
-        <%= debug session[:to_call_list] %>
-      </div>
+      <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
       <%= yield %>
     </div>

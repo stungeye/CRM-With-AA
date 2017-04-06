@@ -22,19 +22,23 @@
 
   <div class="card-block">
       <p class="card-text">
-        <%= customer.phone %>
+        <%= link_to customer.phone, "tel://#{customer.phone}" %>
       </p>
   </div>
 
   <div class="card-block">
       <p class="card-text">
-        <%= customer.email %>
+        <%= mail_to customer.email %>
       </p>
   </div>
 
   <div class="card-block">
       <p class="card-text">
-        <%= button_to 'Remember to Call', remember_to_call_customer_path(customer), method: :post %>
+        <% if customers_to_call.include?(customer) %>
+          <%= button_to 'Mark as Called', mark_as_called_customer_path(customer), class: "btn btn-secondary", method: :post %>
+        <% else %>
+          <%= button_to 'Remember to Call', remember_to_call_customer_path(customer), class: "btn btn-primary", method: :post %>
+        <% end %>
       </p>
   </div>
 </div>

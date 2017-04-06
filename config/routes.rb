@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:index, :show] do
     member do
       post :remember_to_call # POST /customers/:id/remember_to_call/
+      post :mark_as_called   # POST /customers/:id/mark_as_called/
     end
   end
 
